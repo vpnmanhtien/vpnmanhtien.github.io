@@ -1,15 +1,9 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>My Website</title>
-</head>
-<body>
-<!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hướng dẫn cài đặt</title>
+<title>Hướng dẫn sử dụng</title>
 
 <style>
 body {
@@ -24,11 +18,10 @@ header {
     padding: 20px;
     text-align: center;
     font-size: 22px;
-    font-weight: bold;
     background: #1e293b;
 }
 
-/* TAB */
+/* MENU */
 .tabs {
     display: flex;
     justify-content: center;
@@ -36,7 +29,7 @@ header {
 }
 
 .tab {
-    padding: 12px 20px;
+    padding: 12px 18px;
     cursor: pointer;
     color: #94a3b8;
 }
@@ -65,21 +58,6 @@ header {
     border-radius: 10px;
 }
 
-h2 {
-    margin: 10px 0;
-}
-
-/* BUTTON */
-.btn {
-    display: inline-block;
-    background: #38bdf8;
-    padding: 10px 15px;
-    border-radius: 8px;
-    margin-top: 10px;
-    color: black;
-    text-decoration: none;
-}
-
 /* HIDE */
 .hidden {
     display: none;
@@ -99,20 +77,48 @@ function showTab(tabId) {
 </head>
 <body>
 
-<header>📱 Hướng dẫn cài đặt</header>
+<header>📱 Hướng dẫn sử dụng</header>
 
 <div class="tabs">
-    <div class="tab active" data-tab="app1" onclick="showTab('app1')">Shadowrocket</div>
-    <div class="tab" data-tab="app2" onclick="showTab('app2')">App 2</div>
-    <div class="tab" data-tab="app3" onclick="showTab('app3')">App 3</div>
+    <div class="tab active" data-tab="login" onclick="showTab('login')">Đăng nhập tải app</div>
+    <div class="tab" data-tab="shadow" onclick="showTab('shadow')">Cài Shadowrocket</div>
 </div>
 
-<!-- APP 1 -->
-<div id="app1" class="container content">
+<!-- TAB 1: ĐĂNG NHẬP -->
+<div id="login" class="container content">
 
     <div class="card">
         <h2>Bước 1</h2>
-        <img src="sr1.png">
+        <img src="images/login1.png">
+        <p>Mở App Store → Nhấn vào tài khoản</p>
+    </div>
+
+    <div class="card">
+        <h2>Bước 2</h2>
+        <img src="images/login2.png">
+        <p>Đăng xuất tài khoản hiện tại</p>
+    </div>
+
+    <div class="card">
+        <h2>Bước 3</h2>
+        <img src="images/login3.png">
+        <p>Đăng nhập tài khoản được cung cấp</p>
+    </div>
+
+    <div class="card">
+        <h2>Bước 4</h2>
+        <img src="images/login4.png">
+        <p>Tìm "Shadowrocket" và tải về</p>
+    </div>
+
+</div>
+
+<!-- TAB 2: CÀI SHADOWROCKET -->
+<div id="shadow" class="container content hidden">
+
+    <div class="card">
+        <h2>Bước 1</h2>
+        <img src="images/sr1.png">
         <p>Vào mục Subscribe</p>
     </div>
 
@@ -134,22 +140,6 @@ function showTab(tabId) {
         <p>Bật kết nối</p>
     </div>
 
-</div>
-
-<!-- APP 2 -->
-<div id="app2" class="container content hidden">
-    <div class="card">
-        <h2>Hướng dẫn App 2</h2>
-        <p>Bạn thêm nội dung tại đây</p>
-    </div>
-</div>
-
-<!-- APP 3 -->
-<div id="app3" class="container content hidden">
-    <div class="card">
-        <h2>Hướng dẫn App 3</h2>
-        <p>Bạn thêm nội dung tại đây</p>
-    </div>
 </div>
 
 </body>
