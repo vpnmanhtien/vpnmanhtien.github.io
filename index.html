@@ -4,20 +4,153 @@
     <title>My Website</title>
 </head>
 <body>
-<h2>Hướng dẫn Shadowrocket</h2>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hướng dẫn cài đặt</title>
 
-<h3>Bước 1</h3>
-<img src="sr1.png">
-<p>Vào mục Subscribe</p>
+<style>
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #0f172a;
+    color: white;
+}
 
-<h3>Bước 2</h3>
-<img src="">
-<p>Thêm link và download</p>
+/* HEADER */
+header {
+    padding: 20px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    background: #1e293b;
+}
 
-<h3>Bước 3</h3>
-<img src="">
-<p>Chọn server</p>
+/* TAB */
+.tabs {
+    display: flex;
+    justify-content: center;
+    background: #1e293b;
+}
 
-<h3>Bước 4</h3>
-<img src="">
-<p>Bật kết nối</p>
+.tab {
+    padding: 12px 20px;
+    cursor: pointer;
+    color: #94a3b8;
+}
+
+.tab.active {
+    color: white;
+    border-bottom: 2px solid #38bdf8;
+}
+
+/* CONTENT */
+.container {
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.card {
+    background: #1e293b;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+h2 {
+    margin: 10px 0;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    background: #38bdf8;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+/* HIDE */
+.hidden {
+    display: none;
+}
+</style>
+
+<script>
+function showTab(tabId) {
+    document.querySelectorAll('.content').forEach(el => el.classList.add('hidden'));
+    document.getElementById(tabId).classList.remove('hidden');
+
+    document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+    document.querySelector('[data-tab="'+tabId+'"]').classList.add('active');
+}
+</script>
+
+</head>
+<body>
+
+<header>📱 Hướng dẫn cài đặt</header>
+
+<div class="tabs">
+    <div class="tab active" data-tab="app1" onclick="showTab('app1')">Shadowrocket</div>
+    <div class="tab" data-tab="app2" onclick="showTab('app2')">App 2</div>
+    <div class="tab" data-tab="app3" onclick="showTab('app3')">App 3</div>
+</div>
+
+<!-- APP 1 -->
+<div id="app1" class="container content">
+
+    <div class="card">
+        <h2>Bước 1</h2>
+        <img src="images/sr1.png">
+        <p>Vào mục Subscribe</p>
+    </div>
+
+    <div class="card">
+        <h2>Bước 2</h2>
+        <img src="images/sr2.png">
+        <p>Thêm link và download</p>
+    </div>
+
+    <div class="card">
+        <h2>Bước 3</h2>
+        <img src="images/sr3.png">
+        <p>Chọn server</p>
+    </div>
+
+    <div class="card">
+        <h2>Bước 4</h2>
+        <img src="images/sr4.png">
+        <p>Bật kết nối</p>
+    </div>
+
+</div>
+
+<!-- APP 2 -->
+<div id="app2" class="container content hidden">
+    <div class="card">
+        <h2>Hướng dẫn App 2</h2>
+        <p>Bạn thêm nội dung tại đây</p>
+    </div>
+</div>
+
+<!-- APP 3 -->
+<div id="app3" class="container content hidden">
+    <div class="card">
+        <h2>Hướng dẫn App 3</h2>
+        <p>Bạn thêm nội dung tại đây</p>
+    </div>
+</div>
+
+</body>
+</html>
