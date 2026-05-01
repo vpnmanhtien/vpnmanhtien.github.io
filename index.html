@@ -26,15 +26,21 @@ header {
     font-size: 22px;
     background: #1e293b;
 }
+/* THANH HEADER MOBILE */
+.top-bar {
+    display: flex;
+    align-items: center;
+    background: #020617;
+    padding: 10px 15px;
+}
+
+/* LOGO */
 .logo {
-    position: fixed;
-    top: 10px;
-    left: 15px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: #38bdf8;
-    z-index: 1000;
 }
+    
 /* MENU */
 .tabs {
     display: flex;
@@ -168,7 +174,10 @@ function showTab(tabId) {
 
 </head>
 <body>
-<div class="logo">VPN Mạnh Tiến</div>
+<div class="top-bar">
+    <div class="logo">🚀 VPN Mạnh Tiến</div>
+</div>
+    
 <header>📱 Hướng dẫn sử dụng</header>
 
 <div class="tabs">
