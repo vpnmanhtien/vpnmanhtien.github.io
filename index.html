@@ -63,7 +63,55 @@ header {
     display: none;
 }
 </style>
+<style>
+body {
+    font-family: Arial;
+}
 
+/* ===== MOBILE FIX ===== */
+@media (max-width: 600px) {
+
+    header {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+        justify-content: flex-start;
+    }
+
+    .tab {
+        flex: 0 0 auto;
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .container {
+        padding: 12px;
+    }
+
+    .card {
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+    }
+}
+</style>
+
+<script>
+function showTab(tabId) {
+    document.querySelectorAll('.content').forEach(el => el.classList.add('hidden'));
+    document.getElementById(tabId).classList.remove('hidden');
+
+    document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+    document.querySelector('[data-tab="'+tabId+'"]').classList.add('active');
+}
 <script>
 function showTab(tabId) {
     document.querySelectorAll('.content').forEach(el => el.classList.add('hidden'));
