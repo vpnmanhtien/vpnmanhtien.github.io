@@ -103,14 +103,6 @@ body {
     }
 }
 </style>
-
-<script>
-function showTab(tabId) {
-    document.querySelectorAll('.content').forEach(el => el.classList.add('hidden'));
-    document.getElementById(tabId).classList.remove('hidden');
-
-    document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
-    document.querySelector('[data-tab="'+tabId+'"]').classList.add('active');
 }
 <script>
 function showTab(tabId) {
