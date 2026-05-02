@@ -217,12 +217,16 @@ function showTab(tabId) {
     document.querySelector('[data-tab="'+tabId+'"]').classList.add('active');
 function toggleMenu() {
     document.getElementById("sideMenu").classList.toggle("active");
-{
-    document.querySelectorAll('.side-menu a').forEach(link => {
-    link.onclick = () => {
-        document.getElementById("sideMenu").classList.remove("active");
-    };
 }
+
+// auto đóng menu khi bấm
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.side-menu a').forEach(link => {
+        link.onclick = () => {
+            document.getElementById("sideMenu").classList.remove("active");
+        };
+    });
+});
                                                   
 </script>
 
