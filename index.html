@@ -215,7 +215,22 @@ function showTab(tabId) {
     document.getElementById(tabId).classList.remove('hidden');
     document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
     document.querySelector('[data-tab="'+tabId+'"]').classList.add('active');
-}                                                
+}         
+    function showTab(tabId) {
+    document.querySelectorAll('.content').forEach(el => el.classList.add('hidden'));
+    document.getElementById(tabId).classList.remove('hidden');
+
+    document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+    document.querySelector('[data-tab="'+tabId+'"]').classList.add('active');
+}
+
+function toggleMenu() {
+    document.getElementById("sideMenu").classList.toggle("active");
+}
+    function openTab(tabId) {
+    showTab(tabId); // gọi tab
+    document.getElementById("sideMenu").classList.remove("active"); // đóng menu
+}
 </script>
 
 </head>
@@ -223,18 +238,15 @@ function showTab(tabId) {
 <div class="top-bar">
     <div class="logo">🚀 VPN Mạnh Tiến</div>
 </div>
-    
     <!-- NÚT 3 GẠCH -->
 <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
 <!-- MENU TRƯỢT -->
 <div id="sideMenu" class="side-menu">
-    <a onclick="showTab('login')">Đăng nhập</a>
-    <a onclick="showTab('shadow')">Shadowrocket</a>
-    <a onclick="showTab('karing')">Karing</a>
-    <a onclick="showTab('laptop')">Laptop</a>
-    </div>
-    
+    <a onclick="openTab('login')">Đăng nhập</a>
+    <a onclick="openTab('shadow')">Shadowrocket</a>
+    <a onclick="openTab('karing')">Karing</a>
+    <a onclick="openTab('laptop')">Laptop</a>
 </div>
     
 <header>📱 Hướng dẫn sử dụng</header>
