@@ -167,22 +167,81 @@ body {
     border-radius: 8px;
     object-fit: cover;
 }
+    /* NÚT 3 GẠCH */
+.menu-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 22px;
+    color: white;
+    z-index: 1001;
+    cursor: pointer;
+}
+
+/* MENU */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 220px;
+    height: 100%;
+    background: #020617;
+    padding-top: 60px;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.side-menu a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.side-menu a:hover {
+    background: #1e293b;
+}
+
+/* MỞ MENU */
+.side-menu.active {
+    left: 0;
+}
+    
 </style>
     
 <script>
 function showTab(tabId) {
     document.querySelectorAll('.content').forEach(el => el.classList.add('hidden'));
     document.getElementById(tabId).classList.remove('hidden');
-
     document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
     document.querySelector('[data-tab="'+tabId+'"]').classList.add('active');
+function toggleMenu() {
+    document.getElementById("sideMenu").classList.toggle("active");
+{
+    document.querySelectorAll('.side-menu a').forEach(link => {
+    link.onclick = () => {
+        document.getElementById("sideMenu").classList.remove("active");
+    };
 }
+                                                  
 </script>
 
 </head>
 <body>
 <div class="top-bar">
     <div class="logo">🚀 VPN Mạnh Tiến</div>
+</div>
+    
+    <!-- NÚT 3 GẠCH -->
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<!-- MENU TRƯỢT -->
+<div id="sideMenu" class="side-menu">
+    <a onclick="showTab('login')">Đăng nhập</a>
+    <a onclick="showTab('shadow')">Shadowrocket</a>
+    <a onclick="showTab('karing')">Karing</a>
+    <a onclick="showTab('laptop')">Laptop</a>
+    </div>
 </div>
     
 <header>📱 Hướng dẫn sử dụng</header>
