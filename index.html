@@ -259,7 +259,6 @@ function toggleMusic() {
         music.pause();
         btn.innerText = "🔇"; // tắt (gạch chéo)
     }
-}
     
 </script>
     
@@ -280,7 +279,7 @@ function toggleMusic() {
     <a onclick="openTab('karing')">Karing</a>
     <a onclick="openTab('laptop')">Laptop</a>
 </div>
-   <button onclick="toggleMusic()" class="music-btn">🎵</button>
+  <button onclick="toggleMusic()" class="music-btn" id="musicBtn">🎵</button>
 
 <audio id="bgMusic" loop>
   <source src="music.mp3" type="audio/mpeg">
