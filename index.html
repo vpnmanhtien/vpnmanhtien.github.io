@@ -214,15 +214,16 @@ body {
 .side-menu.active {
     left: 0;
 }
-    .music-btn {
+  .music-btn {
     position: fixed;
     bottom: 20px;
     left: 20px;
     background: #38bdf8;
     border: none;
-    padding: 12px;
+    padding: 14px;
     border-radius: 50%;
     font-size: 20px;
+    z-index: 1000;
 }
     
 </style>
@@ -249,12 +250,18 @@ function toggleMenu() {
     
 function toggleMusic() {
     let music = document.getElementById("bgMusic");
+    let btn = document.getElementById("musicBtn");
 
     if (music.paused) {
         music.play();
+        btn.innerText = "🎵"; // đang phát
     } else {
         music.pause();
+        btn.innerText = "🔇"; // tắt (gạch chéo)
     }
+}
+    
+</script>
     
 </script>
 
