@@ -214,6 +214,16 @@ body {
 .side-menu.active {
     left: 0;
 }
+    .music-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #38bdf8;
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    font-size: 20px;
+}
     
 </style>
     
@@ -236,6 +246,10 @@ function toggleMenu() {
     showTab(tabId); // gọi tab
     document.getElementById("sideMenu").classList.remove("active"); // đóng menu
 }
+    function playMusic() {
+    let music = document.getElementById("bgMusic");
+    music.play();
+}
 </script>
 
 </head>
@@ -253,6 +267,11 @@ function toggleMenu() {
     <a onclick="openTab('karing')">Karing</a>
     <a onclick="openTab('laptop')">Laptop</a>
 </div>
+    <button onclick="playMusic()" class="music-btn">🎵</button>
+
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
     
 <header>📱 Hướng dẫn sử dụng</header>
 
