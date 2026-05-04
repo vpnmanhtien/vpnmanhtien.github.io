@@ -246,10 +246,16 @@ function toggleMenu() {
     showTab(tabId); // gọi tab
     document.getElementById("sideMenu").classList.remove("active"); // đóng menu
 }
-    function playMusic() {
+    
+function toggleMusic() {
     let music = document.getElementById("bgMusic");
-    music.play();
-}
+
+    if (music.paused) {
+        music.play();
+    } else {
+        music.pause();
+    }
+    
 </script>
 
 </head>
@@ -267,7 +273,7 @@ function toggleMenu() {
     <a onclick="openTab('karing')">Karing</a>
     <a onclick="openTab('laptop')">Laptop</a>
 </div>
-    <button onclick="playMusic()" class="music-btn">🎵</button>
+   <button onclick="toggleMusic()" class="music-btn">🎵</button>
 
 <audio id="bgMusic" loop>
   <source src="music.mp3" type="audio/mpeg">
