@@ -213,18 +213,7 @@ body {
 /* MỞ MENU */
 .side-menu.active {
     left: 0;
-}
-  .music-btn {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background: #38bdf8;
-    border: none;
-    padding: 14px;
-    border-radius: 50%;
-    font-size: 20px;
-    z-index: 1000;
-}
+} 
     
 </style>
     
@@ -247,19 +236,6 @@ function toggleMenu() {
     showTab(tabId); // gọi tab
     document.getElementById("sideMenu").classList.remove("active"); // đóng menu
 }
-    
-function toggleMusic() {
-    let music = document.getElementById("bgMusic");
-    let btn = document.getElementById("musicBtn");
-
-    if (music.paused) {
-        music.play();
-        btn.innerText = "🎵"; // đang phát
-    } else {
-        music.pause();
-        btn.innerText = "🔇"; // tắt (gạch chéo)
-    }
-    
 </script>
 
 </head>
